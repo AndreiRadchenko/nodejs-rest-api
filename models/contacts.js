@@ -55,9 +55,27 @@ async function addContact({ name, email, phone }) {
   }
 }
 
+async function updateContact(contactId, body) {
+  try {
+    const contacts = await listContacts();
+    let contact = contacts.find(item => item.id === contactId);
+    if (!contact) {
+      return null;
+    }
+    contact = { ...contact, ...body };
+    const indexToReplace = contacts.findIndex(item => item.id === contactId);
+    contacts.splice(indexToReplace, 1, contact);
+    await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+    return contact;
+  } catch (error) {
+    console.error('\x1B[31m Error while edit contact fields!');
+  }
+}
+
 module.exports = {
   listContacts,
   getContactById,
   removeContact,
   addContact,
+  updateContact,
 };
