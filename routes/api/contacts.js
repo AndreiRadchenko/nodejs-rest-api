@@ -9,6 +9,8 @@ const {
 
 const router = express.Router();
 
+const requiredParams = ['name', 'email', 'phone'];
+
 router.get('/', async (req, res, next) => {
   const contacts = await listContacts();
   res.json({ message: 'Contacts list array in json format', contacts });
@@ -25,7 +27,7 @@ router.get('/:contactId', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   const params = Object.keys(req.body);
-  const requiredParams = ['name', 'email', 'phone'];
+
   if (!requiredParams.every(p => params.includes(p))) {
     res.status(400).json({ message: 'missing required name field' });
     return;
@@ -44,8 +46,13 @@ router.delete('/:contactId', async (req, res, next) => {
 });
 
 router.put('/:contactId', async (req, res, next) => {
-  if (Object.keys(req.body).length === 0) {
+  const params = Object.keys(req.body);
+  if (params.length === 0) {
     res.status(400).json({ message: 'missing fields' });
+    return;
+  }
+  if (!params.every(p => requiredParams.includes(p))) {
+    res.status(400).json({ message: 'wrong field name!' });
     return;
   }
   const result = await updateContact(req.params.contactId, req.body);
