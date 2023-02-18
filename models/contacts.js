@@ -10,6 +10,7 @@ async function listContacts() {
     return JSON.parse(contacts);
   } catch (error) {
     console.error('\x1B[31m Error occurs while contacts list was obtained!');
+    throw new Error(error);
   }
 }
 
@@ -17,9 +18,10 @@ async function getContactById(contactId) {
   try {
     const contacts = await listContacts();
     const contact = contacts.find(e => e.id === contactId);
-    return contact;
+    return contact || null;
   } catch (error) {
     console.error('\x1B[31m Error while getting contact!');
+    throw new Error(error);
   }
 }
 
@@ -35,6 +37,7 @@ async function removeContact(contactId) {
     return result;
   } catch (error) {
     console.error('\x1B[31m Error while deleting contact!');
+    throw new Error(error);
   }
 }
 
@@ -52,6 +55,7 @@ async function addContact({ name, email, phone }) {
     return newContact;
   } catch (error) {
     console.error('\x1B[31m Error while adding contact!');
+    throw new Error(error);
   }
 }
 
@@ -69,6 +73,7 @@ async function updateContact(contactId, body) {
     return contact;
   } catch (error) {
     console.error('\x1B[31m Error while edit contact fields!');
+    throw new Error(error);
   }
 }
 
