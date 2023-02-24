@@ -1,34 +1,53 @@
-## GoIT Node.js Course Template Homework
+# GoIT Node.js Course Homework
 
-Виконайте форк цього репозиторію для виконання домашніх завдань (2-6)
-Форк створить репозиторій на вашому http://github.com
+## Unique fields in MongoDB collection, and handling conflicts error
 
-Додайте ментора до колаборації
+1. In Compass in collection tab navigate to Index -> create new index -> choose field that should
+   bee unique -> check Create unique index
 
-Для кожної домашньої роботи створюйте свою гілку.
+2. In mongoose schema add prop `unique: true` to the field definition and add error handler to the
+   schema: `contactSchema.post('save', handleSchemaError);`
 
-- hw02
-- hw03
-- hw04
-- hw05
-- hw06
+```cli
+const contactSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: [true, 'Set name for contact'],
+      unique: true,
+    },
+    email: {
+      type: String,
+      unique: true,
+    },
+    phone: {
+      type: String,
+    },
+    favorite: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  { versionKey: false, timestamps: true }
+);
 
-Кожна нова гілка для др повинна робитися з master
+contactSchema.post('save', handleSchemaError);
 
-Після того, як ви закінчили виконувати домашнє завдання у своїй гілці, необхідно зробити пулл-реквест (PR). Потім додати ментора для рев'ю коду. Тільки після того, як ментор заапрувить PR, ви можете виконати мердж гілки з домашнім завданням у майстер.
+```
 
-Уважно читайте коментарі ментора. Виправте зауваження та зробіть коміт у гілці з домашнім завданням. Зміни підтягнуться у PR автоматично після того, як ви відправите коміт з виправленнями на github
-Після виправлення знову додайте ментора на рев'ю коду.
+3. Create helper `handleSchemaError` which will be called while saving model with our schema. This
+   helper callback is responsible for correct status code sending to frontend. (409 - conflict)
 
-- При здачі домашньої роботи є посилання на PR
-- JS-код чистий та зрозумілий, для форматування використовується Prettier
+```cli
+const isConflict = ({ name, code }) => {
+  return name === 'MongoServerError' && code === 11000;
+};
 
-### Команди:
+const handleSchemaError = (error, data, next) => {
+  error.status = isConflict(error) ? 409 : 400;
+  next();
+};
 
-- `npm start` &mdash; старт сервера в режимі production
-- `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
-- `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
-- `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
+module.exports = handleSchemaError;
 
-#Mongo atlas
-user
+```
