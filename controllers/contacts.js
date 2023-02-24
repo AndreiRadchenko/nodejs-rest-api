@@ -3,7 +3,7 @@ const HttpError = require('../helpers/HttpError');
 const ctrlWrapper = require('../helpers/ctrlWrapper');
 
 const getContacts = async (req, res, next) => {
-  const contacts = await Contact.find();
+  const contacts = await Contact.find({}, '-createdAt -updatedAt');
   res.json({ message: 'Contacts list array in json format', contacts });
 };
 
