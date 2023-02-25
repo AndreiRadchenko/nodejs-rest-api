@@ -3,7 +3,8 @@ const Joi = require('joi');
 const handleSchemaError = require('../helpers/handleSchemaError');
 
 const nameRegex = /^[A-Za-zА-Яа-я]{2,}\d*$/;
-const nameErrorMessage = 'In name allowed only letters and numbers, letters first, min two letters';
+const nameErrorMessage =
+  'Only letters and numbers are allowed for the name, letters first, min two letters';
 
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const emailErrorMessage = "Email format doesn't match";
