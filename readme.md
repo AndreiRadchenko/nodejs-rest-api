@@ -1,10 +1,10 @@
 # GoIT Node.js Course Homework
 
-# REST API
+# <span style="color: orange">REST API</span>
 
 The REST API to the example app is described below. Base url: `https://rendercontacts.onrender.com`
 
-## Authorization routes
+## <span style="color: green">Authorization routes</span>
 
 ### Register: `POST /api/auth/register`
 
@@ -113,7 +113,7 @@ Response
 
 </details>
 
-## Contacts collection routes
+## <span style="color: green">Contacts collection routes</span>
 
 ### Add contact to user collection: `POST /api/contacts`
 
@@ -432,7 +432,7 @@ Response
 
 </details>
 
-# Unique fields in MongoDB collection, and handling conflicts error
+# <span style="color: orange">Unique fields in MongoDB collection, and handling conflicts error</span>
 
 1. In Compass in collection tab navigate to Index -> create new index -> choose field that should
    bee unique -> check Create unique index
