@@ -32,7 +32,7 @@ Response
         }
     }
 
-</details></br>
+</details>
 
 ### Login: `POST /api/auth/login`
 
@@ -60,7 +60,7 @@ Response
         }
     }
 
-</details></br>
+</details>
 
 ### Current: `GET /api/auth/current`
 
@@ -83,7 +83,7 @@ Response
     "subscription": "starter"
     }
 
-</details></br>
+</details>
 
 ### Update subscription: `PATCH /api/auth`
 
@@ -111,7 +111,7 @@ Response
         }
     }
 
-</details></br>
+</details>
 
 ## Contacts collection routes
 
@@ -149,7 +149,6 @@ Response
     }
 
 </details>
-</br>
 
 ### Get all user contacts: `GET /api/contacts`
 
@@ -192,7 +191,7 @@ Response
         },
     }
 
-</details></br>
+</details>
 
 ### Get contact by id: `GET /api/contacts/:id`
 
@@ -223,7 +222,7 @@ Response
         }
     }
 
-</details></br>
+</details>
 
 ### Delete contact: `DELETE /api/contacts/:id`
 
@@ -251,7 +250,7 @@ Response
         }
     }
 
-</details></br>
+</details>
 
 ### Update contact's data: `PUT /api/contacts/:id`
 
@@ -286,7 +285,7 @@ Response
         }
     }
 
-</details></br>
+</details>
 
 ### Update contact's favorite flag: `PATCH /api/contacts/:id/favorite`
 
@@ -323,7 +322,7 @@ Response
         }
     }
 
-</details></br>
+</details>
 
 ### Filter contacts by the 'favorite' flag: `GET /api/contacts?favorite=true`
 
@@ -383,7 +382,7 @@ Response
     ]
     }
 
-</details></br>
+</details>
 
 ### Pagination and filtering: `GET /api/contacts?page=1&limit=2&favorite=false`
 
@@ -431,7 +430,7 @@ Response
     ]
     }
 
-</details></br>
+</details>
 
 # Unique fields in MongoDB collection, and handling conflicts error
 
