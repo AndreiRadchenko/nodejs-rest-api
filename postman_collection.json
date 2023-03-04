@@ -97,7 +97,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDFhNDAyZGY1MjliNDJmN2Y5MjIzYiIsImlhdCI6MTY3Nzg1MzgxNSwiZXhwIjoxNjc3ODU3NDE1fQ.S5_ZT7zB-8mSnaqD2zADFEWfohUYwWwqMYao68Kcrqs",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkyMDEzNCwiZXhwIjoxNjc4MDA2NTM0fQ.b_GAnU0TX-kHqx55va9SNj6VOlmM4YwPnDZ3zZIyQMM",
 							"type": "string"
 						}
 					]
@@ -105,19 +105,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/contacts?",
+					"raw": "https://rendercontacts.onrender.com/api/contacts?favorite=true",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"rendercontacts",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"contacts"
 					],
 					"query": [
 						{
-							"key": "",
-							"value": null
+							"key": "favorite",
+							"value": "true"
 						}
 					]
 				}
@@ -132,7 +134,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDFhNDAyZGY1MjliNDJmN2Y5MjIzYiIsImlhdCI6MTY3NzgzMTA5MywiZXhwIjoxNjc3ODM0NjkzfQ.VL9RwJovJabyHngmYoPs7fq1bwdOXV9nPuNPrvUAS4w",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkyMDEzNCwiZXhwIjoxNjc4MDA2NTM0fQ.b_GAnU0TX-kHqx55va9SNj6VOlmM4YwPnDZ3zZIyQMM",
 							"type": "string"
 						}
 					]
@@ -140,15 +142,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/contacts/63f4b30bd21fb35f3454d960",
+					"raw": "https://rendercontacts.onrender.com/api/contacts/64031305e56210df7284fe18",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"rendercontacts",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"contacts",
-						"63f4b30bd21fb35f3454d960"
+						"64031305e56210df7284fe18"
 					]
 				}
 			},
@@ -203,7 +207,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Ira\",\n    \"email\": \"ira@mail.com\",\n    \"phone\": \"+380671234567\"\n}",
+					"raw": "{\n    \"name\": \"Arkhyp\",\n    \"email\": \"arkhyp@mail.com\",\n    \"phone\": \"+380671234567\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -381,7 +385,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDFhNDAyZGY1MjliNDJmN2Y5MjIzYiIsImlhdCI6MTY3NzgzMTA5MywiZXhwIjoxNjc3ODM0NjkzfQ.VL9RwJovJabyHngmYoPs7fq1bwdOXV9nPuNPrvUAS4w",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkyMDEzNCwiZXhwIjoxNjc4MDA2NTM0fQ.b_GAnU0TX-kHqx55va9SNj6VOlmM4YwPnDZ3zZIyQMM",
 							"type": "string"
 						}
 					]
@@ -390,7 +394,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Anatolii\",\n    \"email\": \"grushavskui@mail.com\",\n    \"phone\": \"0673329751\"\n}",
+					"raw": "{\n    \"name\": \"Anatolii2\",\n    \"email\": \"anatolii2@mail.com\",\n    \"phone\": \"0673329751\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -398,15 +402,17 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/contacts/6401ae8994cbf50346f1b1e9",
+					"raw": "https://rendercontacts.onrender.com/api/contacts/6401cc29ca13c7e6fdaf4ece",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"rendercontacts",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"contacts",
-						"6401ae8994cbf50346f1b1e9"
+						"6401cc29ca13c7e6fdaf4ece"
 					]
 				}
 			},
@@ -420,7 +426,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDFhNDAyZGY1MjliNDJmN2Y5MjIzYiIsImlhdCI6MTY3NzgzMTA5MywiZXhwIjoxNjc3ODM0NjkzfQ.VL9RwJovJabyHngmYoPs7fq1bwdOXV9nPuNPrvUAS4w",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkyMDEzNCwiZXhwIjoxNjc4MDA2NTM0fQ.b_GAnU0TX-kHqx55va9SNj6VOlmM4YwPnDZ3zZIyQMM",
 							"type": "string"
 						}
 					]
@@ -437,15 +443,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/contacts/6401ae8994cbf50346f1b1e9/favorite",
+					"raw": "{{renderContacts}}/api/contacts/6403152be56210df7284fe1e/favorite",
 					"host": [
-						"localhost"
+						"{{renderContacts}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"contacts",
-						"6401ae8994cbf50346f1b1e9",
+						"6403152be56210df7284fe1e",
 						"favorite"
 					]
 				}
@@ -477,12 +482,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://rendercontacts.onrender.com/api/auth",
-					"protocol": "https",
+					"raw": "{{renderContacts}}/api/auth",
 					"host": [
-						"rendercontacts",
-						"onrender",
-						"com"
+						"{{renderContacts}}"
 					],
 					"path": [
 						"api",
