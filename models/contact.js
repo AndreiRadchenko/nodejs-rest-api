@@ -19,13 +19,11 @@ const contactSchema = new Schema(
       type: String,
       required: [true, 'Set name for contact'],
       match: [nameRegex, nameErrorMessage],
-      unique: true,
     },
     email: {
       type: String,
       required: [true, 'Set email for contact'],
       match: [emailRegex, emailErrorMessage],
-      unique: true,
     },
     phone: {
       type: String,
