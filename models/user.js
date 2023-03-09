@@ -89,4 +89,5 @@ module.exports = {
     updateSubscription,
   },
   User,
+  userSchema,
 };
