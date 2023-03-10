@@ -1,5 +1,9 @@
 # GoIT Node.js Course Homework
 
+## Unit test for login controller
+
+Run: `npm test`
+
 # <span style="color: orange">REST API</span>
 
 The REST API to the example app is described below. Base url: `https://rendercontacts.onrender.com`
@@ -64,7 +68,7 @@ Response
 
 ### Current: `GET /api/auth/current`
 
-<details><summary>Request details</summary></br>
+<details><summary>Request details</summary>
 
 You can use this route in your app to regain user connection in a case of the web page was closed,
 and valid token was saved in local Storage.
@@ -109,6 +113,31 @@ Response
         "email": "andrii@mail.com",
         "subscription": "pro"
         }
+    }
+
+</details>
+
+### Update avatar: `PATCH /api/auth/avatars`
+
+<details><summary>Request details</summary>
+
+Update user avatar using multer library
+
+    Headers:
+    Content-type: multipart/form-data
+    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkxNjk3NCwiZXhwIjoxNjc4MDAzMzc0fQ.seXRPf2_C11GkhcylP63rhgdTWJIozYrE8-K66u-beU
+
+    FormData:
+    {
+    "avatar": {imageFile}
+    }
+
+Response
+
+    Status: 200 Ok
+
+    {
+     "avatarURL": "http://res.cloudinary.com/dbm1pjejb/image/upload/v1678445440/rest-api-avatars/bx1yeff5ol1uas5frxyg.jpg"
     }
 
 </details>
