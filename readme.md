@@ -2,7 +2,8 @@
 
 ## Unit test for login controller
 
-Run: `npm test`
+By using <a href="https://jestjs.io/docs/api#aftereachfn-timeout">Jest</a> library, I created
+`controllers/users/login.test.js` module for testing login rout. Run: `npm test`
 
 ## Cloudinary
 
