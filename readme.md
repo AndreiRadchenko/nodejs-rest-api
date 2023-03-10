@@ -4,6 +4,11 @@
 
 Run: `npm test`
 
+## Cloudinary
+
+In the branch `cloudinary` saving avatar on the external cloud storage cloudinary has implemented.
+See controllers/users/updateAvatar for detail.
+
 # <span style="color: orange">REST API</span>
 
 The REST API to the example app is described below. Base url: `https://rendercontacts.onrender.com`
