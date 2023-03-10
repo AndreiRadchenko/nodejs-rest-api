@@ -3,6 +3,7 @@ const handleSchemaError = require('./handleSchemaError');
 const ctrlWrapper = require('./ctrlWrapper');
 const hashPassword = require('./hashPassword');
 const resizeAndMoveAvatar = require('./resizeAndMoveAvatar');
+const uploadAvatarToCloud = require('./uploadAvatarToCloud');
 
 module.exports = {
   HttpError,
@@ -10,4 +11,5 @@ module.exports = {
   ctrlWrapper,
   hashPassword,
   resizeAndMoveAvatar,
+  uploadAvatarToCloud,
 };
