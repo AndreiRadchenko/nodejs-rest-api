@@ -6,8 +6,14 @@ Run: `npm test`
 
 ## Cloudinary
 
-In the branch `cloudinary` saving avatar on the external cloud storage cloudinary has implemented.
-See controllers/users/updateAvatar for detail.
+In the branch `cloudinary` saving avatar on the external cloud storage
+<a href="https://cloudinary.com/">cloudinary</a> has implemented. See controllers/users/updateAvatar
+for detail.
+
+## Jimp library for image transform
+
+Upload image using multipart/form-data request and multer lib, resize image before saving using
+<a href="https://www.npmjs.com/package/jimp">Jimp</a> lib (helpers/resizeAndMoveAvatar.js)
 
 # <span style="color: orange">REST API</span>
 
@@ -62,10 +68,11 @@ Response
 
     {
     "message": "Login successful",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkxNjk3NCwiZXhwIjoxNjc4MDAzMzc0fQ.seXRPf2_C11GkhcylP63rhgdTWJIozYrE8-K66u-beU",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDdhOGYzZjZmZTAwMDc3NTE0ZjI5MiIsImlhdCI6MTY3ODQ1MjkyMSwiZXhwIjoxNjc4NTM5MzIxfQ.Mcu_xtjfrqo6-IhXRPekd_YWBIzHhst2AbZZq7c7_eg",
     "user": {
-        "email": "andrii@mail.com",
-        "subscription": "starter"
+        "email": "dima@mail.com",
+        "subscription": "pro",
+        "avatarURL": "avatars/6407a8f3f6fe00077514f292.jpg"
         }
     }
 
@@ -87,9 +94,10 @@ Response
     Status: 200 Ok
 
     {
-    "name": "Andrii",
-    "email": "andrii@mail.com",
-    "subscription": "starter"
+    "name": "Dima",
+    "email": "dima@mail.com",
+    "subscription": "pro",
+    "avatarURL": "avatars/6407a8f3f6fe00077514f292.jpg"
     }
 
 </details>
@@ -474,6 +482,8 @@ Response
 2. In mongoose schema add prop `unique: true` to the field definition and add error handler to the
    schema: `contactSchema.post('save', handleSchemaError);`
 
+<details><summary>contactSchema</summary>
+
 ```cli
 const contactSchema = new Schema(
   {
@@ -501,8 +511,12 @@ contactSchema.post('save', handleSchemaError);
 
 ```
 
+</details>
+
 3. Create helper `handleSchemaError` which will be called while saving model with our schema. This
    helper callback is responsible for correct status code sending to frontend. (409 - conflict)
+
+<details><summary>handleSchemaError</summary>
 
 ```cli
 const isConflict = ({ name, code }) => {
@@ -517,3 +531,5 @@ const handleSchemaError = (error, data, next) => {
 module.exports = handleSchemaError;
 
 ```
+
+</details>
