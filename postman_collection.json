@@ -328,45 +328,13 @@
 			"name": "auth",
 			"item": [
 				{
-					"name": "GET /api/auth/current",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkxNjk3NCwiZXhwIjoxNjc4MDAzMzc0fQ.seXRPf2_C11GkhcylP63rhgdTWJIozYrE8-K66u-beU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://rendercontacts.onrender.com/api/auth/current",
-							"protocol": "https",
-							"host": [
-								"rendercontacts",
-								"onrender",
-								"com"
-							],
-							"path": [
-								"api",
-								"auth",
-								"current"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "POST /api/auth/register",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Dima\",\n    \"email\": \"dima@mail.com\",\n    \"password\": \"123qweASD\"\n}",
+							"raw": "{\n    \"name\": \"Dima\",\n    \"email\": \"d4100kx@gmail.com\",\n    \"password\": \"123qweASD\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -385,6 +353,38 @@
 								"api",
 								"auth",
 								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/auth/verify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rendercontacts.onrender.com/api/auth/verify",
+							"protocol": "https",
+							"host": [
+								"rendercontacts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"verify"
 							]
 						}
 					},
@@ -425,31 +425,22 @@
 					"response": []
 				},
 				{
-					"name": "POST /api/auth/logout",
+					"name": "GET /api/auth/current",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkxNjk3NCwiZXhwIjoxNjc4MDAzMzc0fQ.seXRPf2_C11GkhcylP63rhgdTWJIozYrE8-K66u-beU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDdhOGYzZjZmZTAwMDc3NTE0ZjI5MiIsImlhdCI6MTY3ODQ1MDUxNiwiZXhwIjoxNjc4NTM2OTE2fQ.LDVctQAy0ZLKYs6QwAsIKLdGu0H0DimsfCdVe4rBYSI",
 									"type": "string"
 								}
 							]
 						},
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"andrii@mail.com\",\n    \"phone\": \"0123456789\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "https://rendercontacts.onrender.com/api/auth/logout",
+							"raw": "https://rendercontacts.onrender.com/api/auth/current",
 							"protocol": "https",
 							"host": [
 								"rendercontacts",
@@ -459,7 +450,7 @@
 							"path": [
 								"api",
 								"auth",
-								"logout"
+								"current"
 							]
 						}
 					},
@@ -526,7 +517,7 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/home/andrii/Pictures/andrii.jpg"
+									"src": "/home/andrii/Pictures/snow-lion.jpg"
 								}
 							]
 						},
@@ -548,6 +539,47 @@
 					"response": []
 				},
 				{
+					"name": "POST /api/auth/logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDJmNjEyOTZkZWE5NTkwNDdiNDAzNyIsImlhdCI6MTY3NzkxNjk3NCwiZXhwIjoxNjc4MDAzMzc0fQ.seXRPf2_C11GkhcylP63rhgdTWJIozYrE8-K66u-beU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"andrii@mail.com\",\n    \"phone\": \"0123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rendercontacts.onrender.com/api/auth/logout",
+							"protocol": "https",
+							"host": [
+								"rendercontacts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET /avatar",
 					"request": {
 						"auth": {
@@ -563,7 +595,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://rendercontacts.onrender.com/avatars/64062f9f263d575ee6812ad0.jpg",
+							"raw": "https://rendercontacts.onrender.com/avatars/6407a8f3f6fe00077514f292.jpg",
 							"protocol": "https",
 							"host": [
 								"rendercontacts",
@@ -572,7 +604,7 @@
 							],
 							"path": [
 								"avatars",
-								"64062f9f263d575ee6812ad0.jpg"
+								"6407a8f3f6fe00077514f292.jpg"
 							]
 						}
 					},
