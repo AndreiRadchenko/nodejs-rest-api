@@ -50,6 +50,46 @@ Response
 
 </details>
 
+### Email verification: `GET /api/auth/verify/:verificationToken`
+
+<details><summary>Request details</summary>
+This request is sent by following link from the email user received after registration.
+
+    Request only need verificationToken in request string
+
+Response
+
+    Status: 200 Ok
+
+    {
+    "message": "Email verification successful"
+    }
+
+</details>
+
+### Resend verification email: `POST /api/auth/verify`
+
+<details><summary>Request details</summary>
+In response to this request, the user will be sent an email with a verification link.
+
+    Headers:
+    Content-type: application-json
+
+    Body:
+    {
+    "email": "andrii@mail.com"
+    }
+
+Response
+
+    Status: 200 Ok
+
+    {
+    "message": "Email verification successful"
+    }
+
+</details>
+
 ### Login: `POST /api/auth/login`
 
 <details><summary>Request details</summary>
