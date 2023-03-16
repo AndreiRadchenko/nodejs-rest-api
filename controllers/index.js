@@ -5,6 +5,8 @@ const removeContact = require('./contacts/removeContact');
 const updateContact = require('./contacts/updateContact');
 
 const register = require('./users/register');
+const verifyEmail = require('./users/verifyEmail');
+const resendVerifyEmail = require('./users/resendVerifyEmail');
 const login = require('./users/login');
 const logout = require('./users/logout');
 const getCurrent = require('./users/getCurrent');
@@ -21,6 +23,8 @@ module.exports = {
   updateContact: ctrlWrapper(updateContact),
 
   register: ctrlWrapper(register),
+  verifyEmail: ctrlWrapper(verifyEmail),
+  resendVerifyEmail: ctrlWrapper(resendVerifyEmail),
   login: ctrlWrapper(login),
   logout: ctrlWrapper(logout),
   getCurrent: ctrlWrapper(getCurrent),

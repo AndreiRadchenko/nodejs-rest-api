@@ -32,6 +32,14 @@ const userSchema = new Schema(
     },
     token: String,
     avatarURL: { type: String, required: true },
+    verify: {
+      type: Boolean,
+      default: false,
+    },
+    verificationToken: {
+      type: String,
+      default: '',
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -61,6 +69,14 @@ const registerSchema = Joi.object({
   }),
 });
 
+const emailSchema = Joi.object({
+  email: Joi.string().pattern(emailRegex).required().messages({
+    'string.pattern.base': emailErrorMessage,
+    'string.empty': `Email cannot be empty`,
+    'any.required': `"Missing required field email"`,
+  }),
+});
+
 const loginSchema = Joi.object({
   email: Joi.string().pattern(emailRegex).required().messages({
     'string.pattern.base': emailErrorMessage,
@@ -85,6 +101,7 @@ const User = model('user', userSchema);
 module.exports = {
   joi: {
     registerSchema,
+    emailSchema,
     loginSchema,
     updateSubscription,
   },
